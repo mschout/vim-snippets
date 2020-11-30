@@ -81,15 +81,13 @@ snippet fore
 	${1:expression} foreach @${2:array};
 # Package
 snippet package
-	package ${1:`expand('%:p:s?.*lib/??:r:gs?/?::?')`};
+	package ${1:`expand('%:p:s?.*/\(lib\|t\)/??:r:gs?/?::?')`};
 	use strict;
 	use warnings;
 
 	${0}
 
 	1;
-
-	__END__
 # Package syntax perl >= 5.14
 snippet packagev514
 	package ${1:`expand('%:p:s?.*lib/??:r:gs?/?::?')`} ${2:0.99};
